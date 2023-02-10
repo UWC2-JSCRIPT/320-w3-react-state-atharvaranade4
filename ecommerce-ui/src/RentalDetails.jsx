@@ -4,15 +4,14 @@ import PropTypes from 'prop-types';
 function RentalDetails({ locationCity, locationCountry, paymentCost }){
 
     return (
-        <>
-        <div className='rental-location-details'>
-            <p>{ locationCity }</p>
-            <p>{ locationCountry }</p>
-        </div>  
-        <div className='rental-payment-details'>
-            <p>{ paymentCost }</p>
-        </div>  
-        </>
+        <div className='rental-details-container'>
+            <div className='rental-location-details'>
+                <p>{ locationCity }, { locationCountry }</p>
+            </div>  
+            <div className='rental-payment-details'>
+                <span>Cost: ${ paymentCost }</span>
+            </div>  
+        </div>
     )
 }
 

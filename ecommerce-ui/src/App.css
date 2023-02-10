@@ -1,38 +1,52 @@
-.App {
-  text-align: center;
+.main-container{
+  display: flex;
+  margin: 1rem;
+  gap: 3rem
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bnb-container, .reserve-container{
+  border: 1px solid rgba(128, 128, 128, 0.292);
+  padding: 1rem;
+  margin:1rem;
+  border-radius: 25px;
+  min-width: 30rem;
+}
+.reserve-container > p{
+  font-weight: bold;
+}
+.bnb-body-container{
+  display: flex;
+  justify-content: space-between;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.rental-details-container{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.rental-image{
+  border-radius: 15px;
+}
+
+.rental-payment-details{
+  font-weight: bold;
+}
+.reserve-btn-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.reserve-list-btn{
+  border-radius: 15px;
+  background: #e49ebd;
+  padding: 10px;
+  border: none;
+  cursor:pointer;
+}
+
+.checkout-btn{
+  border-radius: 15px;
+  background: #a54b74;
+  padding: 10px;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  border: none;
 }
