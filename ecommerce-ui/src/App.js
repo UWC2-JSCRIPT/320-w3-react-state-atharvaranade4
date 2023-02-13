@@ -1,14 +1,42 @@
 import './App.css';
 import RentalCard from './RentalCard'
-import bnb from './_data/bnbs.json'
+import ShoppingCart from './ShoppingCart';
+import bnbData from './_data/bnbs.json';
+import { useState } from "react";
 
 function App() {
-  const VacationRental = bnb.map((rentals, index) => {
+  //declare states
+  let [cartBnbs, setCart] = useState([]);
+  
+  //Add to cart
+  const AddToCart = function(bnbTitle){
+    console.log(bnbTitle)
+    let unitToAdd = bnbData.find(unit => unit.title === bnbTitle) //find items to add
+    console.log(unitToAdd)
+    let alreadyExist = cartBnbs.some(item => item.title === unitToAdd.title)
+    if(alreadyExist) {
+      alert('The item is already in the cart.')
+      return
+    }
+    setCart(prevState => [...prevState, unitToAdd])
+  }
+
+  //remove from cart
+  const removeFromCart = function(bnbTitle){
+    let removeArr = cartBnbs.filter(unit => unit.title !== bnbTitle)
+    setCart(removeArr)
+  }
+  
+  const VacationRental = bnbData.map((item, index) => {
     return (
       <div className='rental-card-container' key={index}>
         <RentalCard
-          bnb={rentals}
-        />
+          bnb={item}
+          orientation = 'horizontal'
+          manageCart={AddToCart}
+          // delagate the managecart function to AddToCart
+          action="Add to Cart"
+          />
       </div>
     )
   });
@@ -19,11 +47,14 @@ function App() {
         {VacationRental}
       </div>
       <div className="reserve-container">
-        <p>Your reservations:</p>
-        <p>Total cost: </p>
-          <button type="button" className="checkout-btn">Checkout</button>
+        <ShoppingCart
+        key={cartBnbs.title}
+        bnbCart={cartBnbs} 
+        manageCart={(bnbTitle) => removeFromCart(bnbTitle)}
+        />
       </div>
     </div>
+  
   )
 }
 

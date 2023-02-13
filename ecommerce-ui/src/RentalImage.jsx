@@ -13,5 +13,5 @@ export default RentalImage
 
 RentalImage.propTypes = {
     image: PropTypes.string.isRequired,
-    // altDescription: PropTypes.string.isRequired
+    altDescription: PropTypes.string.isRequired
 }
