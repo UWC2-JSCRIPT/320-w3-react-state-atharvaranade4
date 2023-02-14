@@ -10,9 +10,9 @@ function App() {
   
   //Add to cart
   const AddToCart = function(bnbTitle){
-    console.log(bnbTitle)
+    // console.log(bnbTitle)
     let unitToAdd = bnbData.find(unit => unit.title === bnbTitle) //find items to add
-    console.log(unitToAdd)
+    // console.log(unitToAdd)
     let alreadyExist = cartBnbs.some(item => item.title === unitToAdd.title)
     if(alreadyExist) {
       alert('The item is already in the cart.')
@@ -32,7 +32,6 @@ function App() {
       <div className='rental-card-container' key={index}>
         <RentalCard
           bnb={item}
-          orientation = 'horizontal'
           manageCart={AddToCart}
           // delagate the managecart function to AddToCart
           action="Add to Cart"

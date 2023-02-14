@@ -4,27 +4,14 @@
   gap: 3rem
 }
 
-.bnb-container-vertical{
+.bnb-container,.reserve-container {
   border: 1px solid rgba(128, 128, 128, 0.292);
   padding: 1rem;
   margin:1rem;
   border-radius: 25px;
   min-width: 30rem;
 }
-.bnb-container-horizontal{
-  border: 1px solid rgba(128, 128, 128, 0.292);
-  padding: 1rem;
-  margin:1rem;
-  border-radius: 25px;
-  min-width: 30rem;
-}
-.reserve-container{
-  border: 1px solid rgba(128, 128, 128, 0.292);
-  padding: 1rem;
-  margin:1rem;
-  border-radius: 25px;
-  min-width: 30rem;
-}
+
 .reserve-container > p{
   font-weight: bold;
 }
@@ -37,7 +24,7 @@
   display: flex;
   flex-direction: column;
 }
-.rental-image{
+.rental-image-nocrop{
   border-radius: 15px;
 }
 

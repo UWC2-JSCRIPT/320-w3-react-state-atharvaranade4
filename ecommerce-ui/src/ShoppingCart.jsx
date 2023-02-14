@@ -4,20 +4,19 @@ import RentalCard from './RentalCard';
 
 function ShoppingCart({bnbCart, manageCart }){ //bnbCart is local variable, will be overwritten in app.js
     let total = 0;
-    let title = [];
     let ShoppingCartItems = bnbCart.map((item, index) =>
     <div className='rental-card-container' key={index}>
         <RentalCard
             bnb={item}
-            orientation = 'vertical'
             manageCart={manageCart}
             action="Remove from Cart"
             />
-    </div>)
-    console.log(bnbCart)
+    </div>
+    )
+    // console.log(bnbCart)
     for(let i of bnbCart) {
         total = total + i.payment.cost
-        console.log(i)
+        // console.log(i)
     }    
     // for(let i of bnbCart) {
     //     title = i.payment.description;
@@ -25,11 +24,11 @@ function ShoppingCart({bnbCart, manageCart }){ //bnbCart is local variable, will
     // }    
     return (
         <>
-        <p>Shopping Cart:</p>
-        <div>
-            {ShoppingCartItems}
-        </div>
-        <p>Total cost: ${total}{title}</p>
+            <p>Shopping Cart:</p>
+            <div>
+                {ShoppingCartItems}
+            </div>
+            <p>Total cost: ${total}</p>
         </>
     )
 }

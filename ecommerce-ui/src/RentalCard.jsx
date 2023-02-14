@@ -4,12 +4,13 @@ import RentalImage from './RentalImage';
 import RentalBody from './RentalDetails';
 import './App.css'
 
-function RentalCard ({ bnb, orientation, manageCart, action }){
+function RentalCard ({ bnb, manageCart, action }){
     return (
-        <div className={`bnb-container-${orientation}`}>
+        <div className='bnb-container'>
             <RentalImage
             image={bnb.image}
             altDescription={bnb.title}
+            imgCrop='nocrop'
             />
             <div className="bnb-body-container">
                 <RentalBody
@@ -33,7 +34,6 @@ RentalCard.propTypes = {
     bnb: PropTypes.object.isRequired,
     manageCart: PropTypes.func.isRequired,
     action: PropTypes.string.isRequired,
-    orientation: PropTypes.string.isRequired
   }
 
 export default RentalCard
