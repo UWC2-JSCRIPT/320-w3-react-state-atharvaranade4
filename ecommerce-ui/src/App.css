@@ -1,0 +1,53 @@
+.main-container{
+  display: flex;
+  margin: 1rem;
+  gap: 3rem
+}
+
+.bnb-container,.reserve-container {
+  border: 1px solid rgba(128, 128, 128, 0.292);
+  padding: 1rem;
+  margin:1rem;
+  border-radius: 25px;
+  min-width: 30rem;
+}
+
+.reserve-container > p{
+  font-weight: bold;
+}
+.bnb-body-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.rental-details-container{
+  display: flex;
+  flex-direction: column;
+}
+.rental-image-nocrop{
+  border-radius: 15px;
+}
+
+.rental-payment-details{
+  font-weight: bold;
+}
+.reserve-btn-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.reserve-list-btn{
+  border-radius: 15px;
+  background: #e49ebd;
+  padding: 10px;
+  border: none;
+  cursor:pointer;
+}
+
+.checkout-btn{
+  border-radius: 15px;
+  background: #a54b74;
+  padding: 10px;
+  color: white;
+  border: none;
+}
